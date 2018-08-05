@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://people.xiph.org/~jm/demo/rnnoise/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" title="default demosheet" href="./RNNoise_ Learning Noise Suppression_files/demo.css" type="text/css">
+    <!-- <link rel="stylesheet" title="default demosheet" media="print" href="demo_print.css" type="text/css"/> -->
+    <title>DL hearing aid demo</title>
+    <script src="./RNNoise_ Learning Noise Suppression_files/ffmap.js"></script>
+    <script src="./RNNoise_ Learning Noise Suppression_files/demo.js"></script>
+    <script src="./RNNoise_ Learning Noise Suppression_files/noise.js"></script>
+    <script src="./RNNoise_ Learning Noise Suppression_files/record.js"></script>
+    <!-- <script src="noise.js"></script>
+    <script src="noise_interface.js"></script> -->
+  </head>
+
+  <body onload="init_demo();">
+    <div class="comparison">
+      <div>
+        <p class="compare_label" style="display: inline-block">Suppression algorithm</p>
+        <ul class="algorithm">
+          <li onclick="liveNoiseSuppression(0, this);" id="default_live_noise_suppression" class="selected">Off</li>
+          <li onclick="liveNoiseSuppression(1, this);">No suppression</li>
+          <li onclick="liveNoiseSuppression(2, this);">RNNoise</li>
+        </ul>
+      </div>
+    </div>
+
+    <canvas id="source_spectrogram" width="16" height="16"></canvas>
+    <canvas id="destination_spectrogram" width="16" height="16"></canvas>
+	</body>
+</html>
