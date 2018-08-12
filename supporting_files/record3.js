@@ -305,8 +305,8 @@ function getMicrophoneAccess() {
     destinationAnalyserNode.connect(audioContext.destination);
     microphoneIsWiredUp = true;
 
-    var sourceView = new SpectogramAnalyzerNodeView(sourceAnalyserNode, document.getElementById("source_spectrogram"), 360, 100);
-    var destinationView = new SpectogramAnalyzerNodeView(destinationAnalyserNode, document.getElementById("destination_spectrogram"), 360, 100);
+    var sourceView = new SpectogramAnalyzerNodeView(sourceAnalyserNode, document.getElementById("source_spectrogram"), 876, 256);
+    var destinationView = new SpectogramAnalyzerNodeView(destinationAnalyserNode, document.getElementById("destination_spectrogram"), 876, 256);
     function tick() {
       sourceView.tick();
       destinationView.tick();
@@ -331,6 +331,24 @@ function convertFloat32ToInt16(buffer) {
   return buf;
 }
 
+let uploadedPackets = 0;
+function postData(arrayBuffer) {
+  let streamingStatus = document.getElementById("streaming_status");
+  var fd = new FormData();
+  fd.append("author", "Fake Name");
+  fd.append("attachment1", new Blob([arrayBuffer]));
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://demo.xiph.org/upload");
+  xhr.onload = function (event) {
+    uploadedPackets++;
+    streamingStatus.innerText = "Donated " + uploadedPackets + " seconds of noise (of 60).";
+    if (uploadedPackets >= 60) {
+      stopStreaming();
+      stopMicrophone();
+    }
+  };
+  xhr.send(fd);
+}
 
 function stopStreaming() {
   return;
