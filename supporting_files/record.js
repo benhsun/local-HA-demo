@@ -282,7 +282,7 @@ function getMicrophoneAccess() {
   // Get access to the microphone and start pumping data through the graph.
   navigator.getUserMedia({
     audio: {
-      echoCancellation: false,
+      echoCancellation: true,
       noiseSuppression: false,
       autoGainControl: false,
     }
