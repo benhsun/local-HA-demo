@@ -128,3 +128,15 @@ p {
       /*.restart .selected {
         background-color: #ddddee;
       }*/
+
+				button {
+					height: 80px;
+					width: 80px;
+				  border-radius: 50%;
+					background-color: #344E5D;
+					color:white;
+				}
+				
+				button:hover {
+					color: #FFD59F;
+				}
