@@ -305,8 +305,8 @@ function getMicrophoneAccess() {
     destinationAnalyserNode.connect(audioContext.destination);
     microphoneIsWiredUp = true;
 
-    var sourceView = new SpectogramAnalyzerNodeView(sourceAnalyserNode, document.getElementById("source_spectrogram"), 360, 100);
-    var destinationView = new SpectogramAnalyzerNodeView(destinationAnalyserNode, document.getElementById("destination_spectrogram"), 360, 100);
+    var sourceView = new SpectogramAnalyzerNodeView(sourceAnalyserNode, document.getElementById("source_spectrogram"), 300, 100);
+    var destinationView = new SpectogramAnalyzerNodeView(destinationAnalyserNode, document.getElementById("destination_spectrogram"), 300, 100);
     function tick() {
       sourceView.tick();
       destinationView.tick();
