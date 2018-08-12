@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-<!-- saved from url=(0041)https://people.xiph.org/~jm/demo/rnnoise/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en"><head><meta name="viewport" http-equiv="Content-Type" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" title="default demosheet" href="./RNNoise_ Learning Noise Suppression_files/demo.css" type="text/css">
-    <!-- <link rel="stylesheet" title="default demosheet" media="print" href="demo_print.css" type="text/css"/> -->
+    <link rel="stylesheet" title="default demosheet" href="./supporting_files/demo.css" type="text/css">
     <title>DL hearing aid demo</title>
-    <script src="./RNNoise_ Learning Noise Suppression_files/ffmap.js"></script>
-    <script src="./RNNoise_ Learning Noise Suppression_files/demo.js"></script>
-    <script src="./RNNoise_ Learning Noise Suppression_files/noise.js"></script>
-    <script src="./RNNoise_ Learning Noise Suppression_files/record.js"></script>
-    <!-- <script src="noise.js"></script>
-    <script src="noise_interface.js"></script> -->
+    <script src="./supporting_files/ffmap.js"></script>
+    <script src="./supporting_files/noise.js"></script>
+    <script src="./supporting_files/record.js"></script>
   </head>
 
   <body onload="init_demo();">
     <div class="comparison">
       <div>
-        <p class="compare_label" style="display: inline-block">Suppression algorithm</p>
         <ul class="algorithm">
-          <li onclick="liveNoiseSuppression(0, this);" id="default_live_noise_suppression" class="selected">Off</li>
-          <li onclick="liveNoiseSuppression(1, this);">No suppression</li>
-          <li onclick="liveNoiseSuppression(2, this);">RNNoise</li>
+          <li onclick="liveNoiseSuppression(0, this);" id="default_live_noise_suppression">Off</li>
+          <li onclick="liveNoiseSuppression(1, this);" id="start">Start</li>
+          <li onclick="liveNoiseSuppression(2, this);" id="dlnc">DLNC</li>
         </ul>
       </div>
     </div>
